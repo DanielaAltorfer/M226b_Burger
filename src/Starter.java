@@ -19,7 +19,7 @@ public class Starter {
 
         }
 
-        static Scanner sc = new Scanner(System.in);
+        public static Scanner sc = new Scanner(System.in);
 
         ArrayList<Zutat> zutaten = new ArrayList<>();
 
@@ -41,7 +41,7 @@ public class Starter {
             zutaten.add(new Sauce("Curry", 0.5f,2.0,6.4));
         }
 
-        public void takeOrder() {
+        public float takeOrder() {
             System.out.println("Welcome to MyBurger. ");
             float gesamtprice = 0;
             gesamtprice += askforIngredient("Wäu dis broot us:", Brot.class);
@@ -51,6 +51,7 @@ public class Starter {
             gesamtprice += askforIngredient("Wäu dis sösseli us:", Sauce.class);
 
             System.out.println("Grossartig! Di Burger chostet " +  gesamtprice + " Stutz. \n Enjoy!");
+            return gesamtprice;
         }
 
         public static boolean isNumeric(String value) {
